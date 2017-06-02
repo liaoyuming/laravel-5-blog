@@ -1,8 +1,4 @@
 <?php
-/**
- * User: 袁超<yccphp@163.com>
- * Time: 2015.04.06 下午4:31
- */
 use Illuminate\Database\Seeder;
 class SystemSeeder extends Seeder{
 
@@ -47,6 +43,16 @@ class SystemSeeder extends Seeder{
                 'cate'=>1,
                 'system_name'=>'copyright',
                 'system_value'=>'版权申明'
+            ],
+            [
+                'cate'=>1,
+                'system_name'=>'home_title',
+                'system_value'=>'首页标题'
+            ],
+            [
+                'cate'=>1,
+                'system_name'=>'home_subtitle',
+                'system_value'=>'首页副标题'
             ]
         ];
         DB::table('systems')->insert($config);

@@ -1,7 +1,7 @@
 @extends('themes.default.layouts')
 
 @section('header')
-    <title>{{ $article->title }}_{{ systemConfig('title','Enda Blog') }} -Powered By  {{ systemConfig('subheading','Enda Blog') }}</title>
+    <title>{{ $article->title }}_{{ systemConfig('title','Enda Blog') }}-{{ systemConfig('subheading','Enda Blog') }}</title>
     <meta name="keywords" content="{{ $article->title }},{{ systemConfig('seo_key') }}" />
     <meta name="description" content="{!! str_limit(preg_replace('/\s/', '',strip_tags(conversionMarkdown($article->content))),100) !!}">
 @endsection

@@ -1,7 +1,7 @@
 @extends('themes.default.layouts')
 
 @section('header')
-    <title>{{ $category->cate_name }}_{{ systemConfig('title','Enda Blog') }} -Powered By  {{ systemConfig('subheading','Enda Blog') }}</title>
+    <title>{{ $category->cate_name }}_{{ systemConfig('title','Enda Blog') }}-{{ systemConfig('subheading','Enda Blog') }}</title>
     <meta name="keywords" content="{{ $category->cate_name }},{{ $category->seo_key }},{{ systemConfig('seo_key') }}" />
     <meta name="description" content="{{ $category->seo_desc }}">
 @endsection

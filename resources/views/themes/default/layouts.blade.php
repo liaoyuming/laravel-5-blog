@@ -32,7 +32,7 @@
 <body class="home">
 <header class="site-header">
     <div class="container">
-        <h1><a href="/">Enda Blog</a></h1>
+        <h1><a href="/">{{ systemConfig('title','Enda Blog') }}</a></h1>
         <nav class="site-header-nav" role="navigation">
 
             <a href="/" class=" site-header-nav-item" target="" title="Home">Home</a>
@@ -63,8 +63,8 @@
 <footer class="container">
     <div class="site-footer" role="contentinfo">
         <div class="copyright left mobile-block">
-            © 2015
-            <span >phpyc.com</span>
+            {{ systemConfig('copyright','© 2016-2017 liaoyuming.cn') }}
+            {{ systemConfig('put_on_record') }}
             <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
         </div>
 
@@ -73,9 +73,6 @@
                 <a href="javascript:window.scrollTo(0,0)" >TOP</a>
             </li>
         </ul>
-        <a href="https://github.com/yccphp/laravel-5-blog" target="_blank" aria-label="view source code">
-            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-        </a>
 
     </div>
 </footer>
