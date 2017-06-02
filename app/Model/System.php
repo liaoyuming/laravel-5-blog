@@ -14,8 +14,9 @@ class System extends Model
 
     protected $fillable = array(
         'cate',
-        'system_name',
-        'system_value'
+        'system_key',
+        'system_value',
+        'display_name',
     );
 
     static $cate = [
@@ -29,7 +30,7 @@ class System extends Model
      */
     public function getSystem($field)
     {
-        return self::select('system_value')->where('system_name', $field)->pluck('system_value');
+        return self::select('system_value')->where('system_key', $field)->pluck('system_value');
     }
 
 }

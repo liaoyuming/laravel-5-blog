@@ -12,8 +12,9 @@ class SystemForm extends BackendForm
     {
 
         return [
-            'cate' => 'integer',
-            'system_name' => 'required',
+            'cate'         => 'integer',
+            'display_name' => 'required',
+            'system_key'  => 'required',
             'system_value' => 'required',
         ];
 

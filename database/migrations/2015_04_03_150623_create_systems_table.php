@@ -16,7 +16,8 @@ class CreateSystemsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('cate')->default(0);
-            $table->string('system_name')->unique();
+            $table->string('display_name');
+            $table->string('system_key')->unique();
             $table->string('system_value');
 		});
 	}

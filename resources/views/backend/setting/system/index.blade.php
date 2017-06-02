@@ -23,10 +23,10 @@
                             <tr>
                                 <th scope="row">{{ $v->id }}</th>
                                 <td>
-                                    {{Lang::get('backend_config.'.$v->system_name)}}
+                                    {{ $v->display_name }}
                                 </td>
                                 <td>
-                                    {!! Form::text('system['.$v->system_name.']', $v->system_value, ['class' => 'form-control']) !!}
+                                    {!! Form::text('system['.$v->system_key.']', $v->system_value, ['class' => 'form-control']) !!}
                                 </td>
                                 <td class="text-right">
 

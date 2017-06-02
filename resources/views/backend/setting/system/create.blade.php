@@ -20,24 +20,30 @@
                     <form action="{{ url('backend/system/create')}}" method="post" class="form-horizontal" >
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">分类</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">类别</label>
                             <div class="col-sm-3">
                                 {!! Form::select('cate', App\Model\System::$cate , null , ['class' => 'form-control']) !!}
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">代码</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">名称</label>
                             <div class="col-sm-3">
-                                {!! Form::text('system_name', '', ['class' => 'form-control','placeholder'=>'code']) !!}
-                                <font color="red">{{ $errors->first('system_name') }}</font>
+                                {!! Form::text('display_name', '', ['class' => 'form-control','placeholder'=>'设置名称']) !!}
+                                <font color="red">{{ $errors->first('display_name') }}</font>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">关键字</label>
+                            <div class="col-sm-3">
+                                {!! Form::text('system_key', '', ['class' => 'form-control','placeholder'=>'英文或下划线组成']) !!}
+                                <font color="red">{{ $errors->first('system_key') }}</font>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">值</label>
                             <div class="col-sm-3">
-                                {!! Form::text('system_value', '', ['class' => 'form-control','placeholder'=>'system_value']) !!}
+                                {!! Form::text('system_value', '', ['class' => 'form-control','placeholder'=>'设置的值']) !!}
                                 <font color="red">{{ $errors->first('system_value') }}</font>
                             </div>
                         </div>

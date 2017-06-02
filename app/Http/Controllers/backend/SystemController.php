@@ -34,7 +34,7 @@ class SystemController extends Controller
 
         try {
             if (System::create($result->all())) {
-                Notification::success('添加成功,请修改语言包文件');
+                Notification::success('添加成功');
                 return redirect('backend/system/index');
             }
         } catch (\Exception $e) {
@@ -59,7 +59,7 @@ class SystemController extends Controller
         $system = Request::get('system');
         if (!empty($system)) {
             foreach ($system as $K => $v) {
-                System::where('system_name', '=', $K)->update(['system_value' => $v]);
+                System::where('system_key', '=', $K)->update(['system_value' => $v]);
             }
             Notification::success('保存成功');
             return redirect()->back();
