@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers\backend;
+<?php
+
+namespace App\Http\Controllers\backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
 use Input, Redirect, Notification;
 use App\Model\Tag;
 use App\Http\Requests\TagsForm;

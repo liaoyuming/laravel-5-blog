@@ -2,8 +2,6 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-//use Illuminate\Http\Request;
 use App\Model\System;
 use App\Http\Requests\SystemForm;
 use Input, Redirect, Notification;

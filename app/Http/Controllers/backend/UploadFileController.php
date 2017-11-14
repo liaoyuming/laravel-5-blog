@@ -1,9 +1,5 @@
 <?php
-/**
- * 公共文件上传
- * User: 袁超<yccphp@163.com>
- * Time: 2015.05.19 下午6:06
- */
+
 namespace App\Http\Controllers\backend;
 
 use App\Http\Requests;

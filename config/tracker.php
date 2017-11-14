@@ -338,7 +338,7 @@ return [
      * Stats Panel routes middleware
      *
      */
-    'stats_routes_middleware' => 'web',
+    'stats_routes_middleware' => 'auth',
 
     /*
      * Stats Panel template path

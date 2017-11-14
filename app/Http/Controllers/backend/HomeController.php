@@ -1,10 +1,12 @@
-<?php namespace App\Http\Controllers\backend;
+<?php
+
+namespace App\Http\Controllers\backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Tracker;
 
 class HomeController extends Controller {
 

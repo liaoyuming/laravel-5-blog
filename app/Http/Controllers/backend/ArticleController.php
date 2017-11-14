@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\backend;
+<?php
+
+namespace App\Http\Controllers\backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-
 use Input, Notification, Auth, Request, Cache;
 use App\Model\Article;
 use App\Model\Category;

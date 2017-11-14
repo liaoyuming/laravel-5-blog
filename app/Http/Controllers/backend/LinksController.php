@@ -4,7 +4,6 @@ namespace App\Http\Controllers\backend;
 
 use App\Model\Links;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Requests\LinksRequest;
 use App\Http\Controllers\Controller;
