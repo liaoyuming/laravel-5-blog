@@ -84,6 +84,18 @@ return [
 			'prefix'   => '',
 		],
 
+        'tracker' => [
+            'driver'   => 'mysql',
+            'host'      => env('TRACKER_DB_HOST', 'localhost'),
+			'database'  => env('TRACKER_DB_DATABASE', 'forge'),
+			'username'  => env('TRACKER_DB_USERNAME', 'forge'),
+			'password'  => env('TRACKER_DB_PASSWORD', ''),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+            'strict' => false,    // to avoid problems on some MySQL installs
+          ],
+
 	],
 
 	/*

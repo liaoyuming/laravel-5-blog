@@ -80,7 +80,8 @@ return [
 
     'key' => env('APP_KEY', 'SomeRandomString'),
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => 'AES-256-CBC',
+
     'themes' => 'default',
 
     /*
@@ -149,7 +150,10 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         Krucas\Notification\NotificationServiceProvider::class,
         YuanChao\Editor\EndaEditorServiceProvider::class,
-        Mews\Captcha\CaptchaServiceProvider::class
+        Mews\Captcha\CaptchaServiceProvider::class,
+
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+
     ],
 
     /*
@@ -201,8 +205,8 @@ return [
         'HTML' => Illuminate\Html\HtmlFacade::class,
         'Notification' => Krucas\Notification\Facades\Notification::class,
         'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
-        'Captcha' => Mews\Captcha\Facades\Captcha::class
-
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
     ],
 
 ];
