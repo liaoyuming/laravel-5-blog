@@ -4,6 +4,7 @@
     <title>{{ $article->title }}_{{ systemConfig('title','Enda Blog') }}-{{ systemConfig('subheading','Enda Blog') }}</title>
     <meta name="keywords" content="{{ $article->title }},{{ systemConfig('seo_key') }}" />
     <meta name="description" content="{!! str_limit(preg_replace('/\s/', '',strip_tags(conversionMarkdown($article->content))),100) !!}">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 @endsection
 
 @section('content')
