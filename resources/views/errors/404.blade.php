@@ -1,4 +1,4 @@
-@extends('themes.keylime.main')
+@extends('themes.default.layouts')
 
 @section('header')
     <title>404_{{ systemConfig('title','Enda Blog') }}-Powered By{{ systemConfig('subheading','Enda Blog') }}</title>
@@ -32,7 +32,6 @@
                         <h4 class="text-center">
                             <a href="{{ url(route('article.show',['id'=>$article->id])) }}" title="{{ $article->title }}" target="_blank">{{ $article->title }}</a>
                         </h4>
-                        <p class="post-date text-center">{{ date('Y-m-d',strtotime($article->created_at)) }}</p>
                     </div>
                 @endforeach
             @endif
