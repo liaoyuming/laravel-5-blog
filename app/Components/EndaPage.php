@@ -1,13 +1,11 @@
 <?php
-/**
- * User: 袁超<yccphp@163.com>
- * Time: 2015.11.12 下午6:16
- */
+
 namespace App\Components;
 
 use Illuminate\Contracts\Pagination\Presenter;
-use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
 use Illuminate\Pagination\BootstrapThreePresenter;
+use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
+
 class EndaPage extends BootstrapThreePresenter implements Presenter
 {
     public $paginator;

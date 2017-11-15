@@ -79,7 +79,7 @@ class Category extends Model
      * @param $asName
      * @return mixed
      */
-    public static function getCatInfoModelByAsName($asName)
+    public static function getByAsName($asName)
     {
         return self::where('as_name', '=', $asName)->first();
     }
