@@ -23,7 +23,7 @@
         <div class="row hidden-xs">
             {{ viewInit() }}
             <?php
-               $hotArticle = App\Model\Article::getHotArticle(3)
+               $hotArticle = App\Model\Article::getHotArticle(3);
             ?>
             @if(!empty($hotArticle))
                 @foreach($hotArticle as $key=>$article)
