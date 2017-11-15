@@ -34,15 +34,12 @@
     <div class="container">
         <h1><a href="/">{{ systemConfig('title','Enda Blog') }}</a></h1>
         <nav class="site-header-nav" role="navigation">
-
-            <a href="/" class=" site-header-nav-item" target="" title="Home">Home</a>
-
-
-            @if(!empty($navList))
+            @if($navList->isEmpty())
+                <a href="/" class="site-header-nav-item" target="" title="Home">Home</a>
+            @else
                 @foreach($navList as $nav)
                     <a href="{{ $nav->url }}" class="site-header-nav-item">{{ $nav->name }}</a>
                 @endforeach
-
             @endif
             <form class="demo_search" action="{{url('search/keyword')}}" method="get">
                 <i class="icon_search" id="open"></i>
