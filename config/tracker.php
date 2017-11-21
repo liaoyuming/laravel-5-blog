@@ -57,9 +57,7 @@ return [
      *     '10.0.0.0/32'
      *     '172.17.0.0/255.255.0.0'
      */
-    'do_not_track_ips' => [
-        '127.0.0.0/24', /// range 127.0.0.1 - 127.0.0.255
-    ],
+    'do_not_track_ips' => explode(',', env('DO_NOT_TRACK_IPS', '127.0.0.0/24')),
 
     /*
      * When an IP is not trackable, show a message in log.
