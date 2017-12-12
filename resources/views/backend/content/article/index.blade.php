@@ -26,36 +26,41 @@
                             <td>{{ $v->title }}</td>
                             <td>{{ App\Model\Category::getCategoryNameByCatId($v->cate_id) }}</td>
                             <td>{{ App\User::getUserNameByUserId($v->user_id) }}</td>
-                            <td>{{ $v->status->view_number }}</td>
+                            <td>{{ array_get($v->status, 'view_number', 0) }}</td>
                             <td>{{ $v->created_at }}</td>
-                            <td class="text-right">
-
-
-                                {!! Form::open([
-                                'route' => array('backend.article.destroy', $v->id),
-                                'method' => 'delete',
-                                'class'=>'btn_form'
-                                ]) !!}
-
+                            <td class="">
+                                {!!
+                                    Form::open([
+                                        'route' => array('backend.article.destroy', $v->id),
+                                        'method' => 'delete',
+                                        'class'=>'btn_form'
+                                        ])
+                                !!}
                                 <button type="submit" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                     删除
                                 </button>
-
                                 {!! Form::close() !!}
 
-                                {!! Form::open([
-                                    'route' => array('backend.article.edit', $v->id),
-                                    'method' => 'get',
-                                    'class'=>'btn_form'
-                                ]) !!}
-
+                                {!!
+                                    Form::open([
+                                        'route' => array('backend.article.edit', $v->id),
+                                        'method' => 'get',
+                                        'class'=>'btn_form'
+                                    ])
+                                !!}
                                 <button type="submit" class="btn btn-info">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                     修改
                                 </button>
                                 {!! Form::close() !!}
 
+                                <div class="" style="margin-right: 5px;float:right">
+                                    <a href="{{ route('article.show', ['id' => $v->id]) }}" class="btn btn-primary" target="_blank">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                        预览
+                                    </a>
+                                </div>
                             </td>
 
                         </tr>

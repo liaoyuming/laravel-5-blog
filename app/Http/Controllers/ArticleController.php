@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Components\EndaPage;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Model\Tag;
 use Illuminate\Http\Request;
-
 use App\Model\ArticleStatus;
 use App\Model\Article;
 

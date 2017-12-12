@@ -76,6 +76,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 {!! Form::submit('修改', ['class' => 'btn btn-success']) !!}
+                                {!! HTML::linkRoute('article.show', '预览', ['id' => $article->id], ['class' => 'btn btn-primary', 'target' =>'__blank']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -90,13 +91,13 @@
 <script type="text/javascript">
     $('#tags').tokenfield({
         autocomplete: {
-            source: <?php echo  \App\Model\Tag::getTagStringAll()?>,
+            source: {{ \App\Model\Tag::getTagStringAll() }},
             delay: 100
 
         },
         showAutocompleteOnFocus: !0,
         delimiter: [","],
-        tokens: <?php echo  \App\Model\Tag::getTagStringByTagIds($article->tags)?>
+        tokens: {{ \App\Model\Tag::getTagStringByTagIds($article->tags) }}
     })
 </script>
 @endsection

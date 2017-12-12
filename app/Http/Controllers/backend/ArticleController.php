@@ -26,7 +26,6 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
         return backendView('index', ['article' => Article::orderBy('id', 'DESC')->paginate(10)]);
     }
 
@@ -52,7 +51,6 @@ class ArticleController extends Controller
     {
         //
         try {
-
             $data = array(
                 'title' => $result->input('title'),
                 'user_id' => Auth::user()->id,
@@ -63,11 +61,12 @@ class ArticleController extends Controller
             );
 
             if ($article = Article::create($data)) {
+
                 if (ArticleStatus::initArticleStatus($article->id)) {
                     // 清除缓存
                     Cache::tags(Article::REDIS_ARTICLE_PAGE_TAG)->flush();
                     Notification::success('恭喜又写一篇文章');
-                    return redirect()->route('backend.article.index');
+                    return redirect()->route('backend.article.edit', ['id' => $article->id]);
                 } else {
                     self::destroy($article->id);
                 }
@@ -113,7 +112,6 @@ class ArticleController extends Controller
     {
         //
         try {
-
             $data = array(
                 'title' => $result->input('title'),
                 'user_id' => Auth::user()->id,
@@ -132,7 +130,7 @@ class ArticleController extends Controller
                 Cache::tags(Article::REDIS_ARTICLE_PAGE_TAG)->flush();
                 Cache::forget(Article::REDIS_ARTICLE_CACHE.$id);
 
-                return redirect()->route('backend.article.index');
+                return redirect()->route('backend.article.edit', ['id' => $id]);
             }
 
         } catch (\Exception $e) {
